@@ -1,6 +1,6 @@
 # RelNeet 👨‍💻
 
-A RelNeet consiste num desafio de criar uma aplicação Full Stack desenvolvida do 0 em 1 semana a partir da ideia de um **Cliente** ter seu CRUD junto de poder adicionar **Contatos** para si, que também devem ter seus CRUD's.
+A RelNeet consiste num desafio de criar uma aplicação Full Stack desenvolvida do 0 em 1 semana a partir da ideia de um Cliente ter seu CRUD junto de poder adicionar Contatos para si, que também devem ter seus CRUD's.
 
 ## Tópicos de conteúdo
 
@@ -178,13 +178,13 @@ As rotas autenticadas (🔐) necessitam da adição de um token no cabeçalho da
 }
 ```
 
-As rotas que necessitam de **id** ex: "client/**client_id**" devem receber o id no formato UUID.
+As rotas que necessitam de **id** ex: "client/client_id" devem receber o id no formato UUID.
 
 A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **clientes ("/client")** somente pode ocorrer pelo dono daqueles dados. Caso tente atualizar/deletar dados de um cliente diferente do que está logado será enviado o erro:
 
 - ❌ Resposta (Forbidden) - status: 403
 
-```json
+```json00911345677
 {
 	"message": "User don't have permission to do that."
 }
@@ -200,7 +200,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
 
 | Método | Rota   | Descrição                |
 | ------ | ------ | ------------------------ |
-| POST   | /login | Login de um **cliente**. |
+| POST   | /login | Login de um cliente. |
 
 ### 1.1. Login de clientes - ("/login") - POST
 
@@ -253,8 +253,8 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
 | ------ | ----------------------- | ----------------------------------- |
 | POST   | /client                 | Cadastro de um cliente.             |
 | GET    | /cliente                | Retorna os dados do cliente logado. |
-| PATCH  | /cliente/**:client_id** | Atualiza os dados de um cliente.    |
-| DELETE | /cliente/**:client_id** | Deleta um cliente.                  |
+| PATCH  | /cliente/:client_id | Atualiza os dados de um cliente.    |
+| DELETE | /cliente/:client_id | Deleta um cliente.                  |
 
 ### 2.1. Criar cliente - ("/client") - POST
 
@@ -267,7 +267,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
   "fullName": "cliente",
   "email": "cliente@mail.com",
   "password": "Senha123!",
-  "phoneNumber": "5500912345678"
+  "phoneNumber": "5531879925374"
 }
 ```
 
@@ -279,7 +279,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
   "fullName": "cliente",
   "email": "cliente@gmail.com",
   "description": null,
-  "phoneNumber": "5500912345678",
+  "phoneNumber": "5531879925374",
   "createdAt": "2023-03-24T18:12:31.922Z"
 }
 ```
@@ -311,12 +311,12 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
   "fullName": "cliente",
   "email": "cliente@mail.com",
   "description": null,
-  "phoneNumber": "5500912345678",
+  "phoneNumber": "5531879925374",
   "createdAt": "2023-03-24T18:12:31.922Z"
 }
 ```
 
-### 2.3. Atualizar dados do cliente - ("/client/**:client_id**") - PATCH
+### 2.3. Atualizar dados do cliente - ("/client/:client_id") - PATCH
 
 [Retornar aos Endpoints - 🔙](#endpoints)
 
@@ -338,7 +338,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
   "email": "clientenovo@mail.com",
   "password": "Senha321!",
   "description": "nova descrição",
-  "phoneNumber": "5500912345610"
+  "phoneNumber": "5531879925374"
 }
 ```
 
@@ -350,12 +350,12 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
   "fullName": "cliente atualizado",
   "email": "clientenovo@mail.com",
   "description": "nova descrição",
-  "phoneNumber": "5500912345610",
+  "phoneNumber": "5531879925374",
   "createdAt": "2023-03-24T18:12:31.922Z"
 }
 ```
 
-### 2.3. Deletar dados do cliente - ("/client/**:client_id**") - DELETE
+### 2.3. Deletar dados do cliente - ("/client/:client_id") - DELETE
 
 [Retornar aos Endpoints - 🔙](#endpoints)
 
@@ -401,7 +401,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
 {
   "fullName": "contato",
   "email": "contato@mail.com",
-  "phoneNumber": "5500911347632"
+  "phoneNumber": "5531879925374"
 }
 ```
 
@@ -412,7 +412,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
   "id": "196240cb-f907-411e-b4a6-8864c79837fa",
   "fullName": "contato",
   "email": "contato@mail.com",
-  "phoneNumber": "5500911347632",
+  "phoneNumber": "5531879925374",
   "createdAt": "2023-03-24T18:12:31.922Z"
 }
 ```
@@ -441,9 +441,9 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
 [
   {
     "id": "196240cb-f907-411e-b4a6-8864c79837fa",
-    "fullName": "contact",
-    "email": "contact@gmail.com",
-    "phoneNumber": "5500911345678",
+    "fullName": "contato",
+    "email": "contato@mail.com",
+    "phoneNumber": "5531879925374",
     "createdAt": "2023-03-24T18:12:31.922Z"
   },
   ...
@@ -451,7 +451,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
 
 ```
 
-### 3.3 Atualizar dados de um contato - ("/contact/**contact_id**") - PATCH
+### 3.3 Atualizar dados de um contato - ("/contact/contact_id") - PATCH
 
 [Retornar aos Endpoints - 🔙](#endpoints)
 
@@ -469,7 +469,7 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
 {
   "fullName": "contato Atualizado",
   "email": "contatoatualizado@mail.com",
-  "phoneNumber": "5500911345677"
+  "phoneNumber": "5531998039324"
 }
 ```
 
@@ -480,12 +480,12 @@ A manipulação de dados através dos métodos **PATCH/DELETE** nas rotas dos **
   "id": "196240cb-f907-411e-b4a6-8864c79837fa",
   "fullName": "contato Atualizado",
   "email": "contatoatualizado@mail.com",
-  "phoneNumber": "5500911345677",
+  "phoneNumber": "5531998039324",
   "createdAt": "2023-03-24T18:12:31.922Z"
 }
 ```
 
-### 3.4 Deletar contato - ("/contact/**contact_id**") - DELETE
+### 3.4 Deletar contato - ("/contact/contact_id") - DELETE
 
 [Retornar aos Endpoints - 🔙](#endpoints)
 
